@@ -1,0 +1,91 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.0/processing.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <style>
+    /* Tutorial on https://fossheim.io/writing/posts/css-text-gradient. */
+
+.gradient-text {
+  /* Fallback: Set a background color. */
+  background-color: mediumslateblue;
+  
+  /* Create the gradient. */
+  background-image: linear-gradient(to right, springgreen, magenta);
+    
+  
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+        
+        .menu-center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 56px;
+        }
+
+        .topnav {
+            background-color: #181123;
+        }
+/* Style the rest of the page. */
+body {
+  background-color: #050005;
+  margin: 0px;
+  text-align: center;
+}
+
+header {
+  margin-top: 1em;
+  margin-top: calc(50vh - 3em);
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+    font-size: 18px;
+  text-align: center;
+  margin: 6px;
+  padding-bottom:9px;
+}
+h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+h2 {
+    margin-top=2vw;
+    font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-size: 40px;
+    margin:0vw;
+        }
+p {
+        font-family: 'Raleway', sans-serif; 
+        text-align: center;
+        margin-bottom: 8px;
+        }
+    </style>
+    <title>Gaming</title>
+    <link rel="icon" href="Images fpr website/tab icon fpr website.png">
+    
+    </head>
+<body>
+    <h2 class="gradient-text"> <br>Game loader<br> </h2>
+    <h2> secret text sp00ky<br> </h2>
+    <script src ="gamescript_fpr_website/gamescript_fpr_website.pde" type="application/processing">
+   
+    </script>
+    <canvas id="gameload1"></canvas>
+    <h1 class="gradient-text"> <br>Marble Fall</h1>
+    </body>
+</html>
