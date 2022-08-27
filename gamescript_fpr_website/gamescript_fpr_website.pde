@@ -24,6 +24,7 @@ void draw(){
     player.display();
     player.update();
     marble.display();
+    marble.update();
     
     score.display(player.x, player.y);
     score.update();
@@ -31,6 +32,18 @@ void draw(){
     if(objectIntersection(player, ground)){
       player.groundCheck(ground.y, ground.h);
     } 
+    
+    if (objectCollision(marble, ground)){
+      marble.groundCheck(0,-marble.h/2, random(marble.w/2, width-marble.w/2));
+      marble.grounded=false;
+    }
+    
+    if (objectMurder(marble, player)){
+      marble.groundCheck(0,-marble.h/2, random(marble.w/2, width-marble.w/2));
+      marble.grounded=false;
+      score.deathTime=millis();
+      
+    }
 }
 
 boolean objectIntersection(Player player, Platform platform){
@@ -38,6 +51,34 @@ boolean objectIntersection(Player player, Platform platform){
     float disty= abs(player.y - platform.y);
     float combinedHalfHeight= (player.h+platform.h)/2;
     float combinedHalfWidth= (player.w+platform.w)/2;
+    
+    if (distx <= combinedHalfWidth) {
+        if (disty <= combinedHalfHeight) {
+            return true;
+        }
+    }
+    return false;
+}
+
+boolean objectCollision(Marble marble, Platform platform){
+    float distx= abs(marble.x - platform.x);
+    float disty= abs(marble.y - platform.y);
+    float combinedHalfHeight= (marble.h+platform.h)/2;
+    float combinedHalfWidth= (marble.w+platform.w)/2;
+    
+    if (distx <= combinedHalfWidth) {
+        if (disty <= combinedHalfHeight) {
+            return true;
+        }
+    }
+    return false;
+}
+
+boolean objectMurder(Marble marble, Player player){
+    float distx= abs(marble.x - player.x);
+    float disty= abs(marble.y - player.y);
+    float combinedHalfHeight= (marble.h+player.h)/2;
+    float combinedHalfWidth= (marble.w+player.w)/2;
     
     if (distx <= combinedHalfWidth) {
         if (disty <= combinedHalfHeight) {
@@ -148,10 +189,12 @@ class Score {
   int s;
   float x;
   float y;
+  float time;
+  float deathTime=0;
   
   float tSize = 64;
   
-  Score (float xpos, float ypos) {s=0; x=xpos; y=ypos;}
+  Score (float xpos, float ypos) {s=0; x=xpos; y=ypos; time=millis();}
   void display (float x, float y)
   {
     fill(0,255,255);
@@ -163,16 +206,26 @@ class Score {
   
   void update ()
   {
-  s =  round(millis()/1000);
+    time=millis()-deathTime;
+  s =  round(time/1000);
   tSize= 64/str(s).length();
   }
 }
 
 class Marble {
   float x,y,w,h;
+  float dy;
+  float g, speed;
+  boolean grounded;
   Marble (float xpos)
   {
-  x=xpos; y=10; w=25; h=25;
+  x=xpos;
+  y=10;
+  w=25; 
+  h=25;
+  grounded=false;
+  g=0.6;
+  speed=0;
 }
   void display(){
     fill(255,255,0);
@@ -180,5 +233,17 @@ class Marble {
     
   }
   void update(){
+    if(!grounded)
+    
+    {
+    dy+=g;
+    }
+    y+=dy;
   }
+    void groundCheck(float newY, float newH, float newX){
+    dy=0;
+    grounded=true;
+    y=newY-newH/2-h/2;
+    x=newX;
+}
 }
