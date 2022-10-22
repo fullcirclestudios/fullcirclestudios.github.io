@@ -6,6 +6,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <style>
     /* Tutorial on https://fossheim.io/writing/posts/css-text-gradient. */
 
@@ -14,7 +20,7 @@
   background-color: mediumslateblue;
   
   /* Create the gradient. */
-  background-image: linear-gradient(to right, springgreen, magenta);
+  background-image: linear-gradient(to right, white, #b0aaa4);
     
   
   /* Set the background size and repeat properties. */
@@ -27,6 +33,9 @@
   -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+    
+    
+    font-family: 'Montserrat', sans-serif;
 }
         
         .menu-center {
@@ -37,7 +46,7 @@
         }
 
         .topnav {
-            background-color: #181123;
+            background-color: #b6b1ab;
             padding-bottom: 0px;
             margin-bottom: 0px;
         }
@@ -50,7 +59,7 @@
         }
 /* Style the rest of the page. */
 body {
-  background-color: #050005;
+  background-image: linear-gradient(to bottom, #f7f4ed, #858077);
   margin: 0px;
 }
 
@@ -75,6 +84,13 @@ h3 {
 h2 {
             
         }
+        
+        
+        @keyframes example {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
 p {
         font-family: 'Raleway', sans-serif; 
         text-align: center;
@@ -87,24 +103,8 @@ p {
             
         }
         
-        .incard-card {
-            margin: auto;
-            border-radius: 18px;
-            background-image:linear-gradient(#181123, #000000);
-            height: 282px;
-            width: 183px;
-        }
-           .card {
-            border-radius: 20px;
-            background-image:linear-gradient(cyan, mediumslateblue);
-            height: 300px;
-            width: 200px;
-            align-content: center;
-            margin: auto;
-            display:flex;
-            align-items: center;
-            justify-content: center;
-        }
+      
+        
         
         .centeralign {
             margin-left: auto;
@@ -113,7 +113,7 @@ p {
         }
         
         .stylebar {
-            background-image:linear-gradient(to right,#41494a, #47394f);
+            background-image:url("Images fpr website/newnews background fpr website.jpg");
             width: 90vw;
             height: 320px;
             margin-left:auto;
@@ -127,14 +127,97 @@ p {
             color: aliceblue;
             text-align: left;
             margin-left: 36px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 32px;
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 64px;
+            margin-bottom: 5px;
+            
+            text-shadow: 2px 2px 4px #000000;
         }
         
         .tolefttext {
             text-align: left;
             margin-left: 36px;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 2px 2px 4px #000000;
         }
+        
+        .card {
+            margin-top: 18px;
+            border-radius: 20px;
+            background-color:#969287;
+            height: 300px;
+            width: 200px;
+            align-content: center;
+            margin: auto;
+            display:inline-block;
+            text-align:center;
+            margin:12px;
+            opacity: 1;
+            animation-name: example;
+            animation-duration: 5s;
+            margin-left: 35px;
+            margin-right: 35px;
+        }
+        
+        .card1 {
+            margin-top: 18px;
+            border-radius: 20px;
+            background-color:#969287;
+            height: 300px;
+            width: 200px;
+            align-content: center;
+            margin: auto;
+            display:inline-block;
+            text-align:center;
+            margin:12px;
+            opacity: 1;
+            animation-name: example;
+            animation-duration: 7.5s;
+            margin-left: 35px;
+            margin-right: 35px;
+        }
+        
+        .card2 {
+            margin-top: 18px;
+            border-radius: 20px;
+            background-color:#969287;
+            height: 300px;
+            width: 200px;
+            align-content: center;
+            margin: auto;
+            display:inline-block;
+            text-align:center;
+            margin:12px;
+            opacity: 1;
+            animation-name: example;
+            animation-duration: 10s;
+            margin-left: 35px;
+            margin-right: 35px;
+        }
+        
+        .bigcard {
+            margin:auto;
+            text-align: center;
+            align-content: center;
+            
+        }
+        
+        .cardtext {
+            font-family: 'Staatliches', cursive;
+            font-size: 128px;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            text-align: left;
+            line-height: 1;
+            
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        
+    
                
     </style>
     <title>Full Circle Studios</title>
@@ -143,12 +226,12 @@ p {
     </head>
     <body>
         <div class="topnav">
-             <img src="Images fpr website/icon fpr website.gif" alt="Logo" width="56px" height="56px" class="menu-center">
+             <img src="Images fpr website/homescreen-vintage-icon-fpr-website.png" alt="Logo" width="56px" height="56px" class="menu-center">
         <h1 class="gradient-text">F U L L &nbsp; C I R C L E &nbsp; S T U D I O S</h1>
         </div>
-    <div class="stylebar"><a href="home-lightmode.html"><img height="96px" width="96px" src="Images fpr website/moonlight icon fpr website.png"></a><h2 class="stylebartext"> <br> <br>Full Circle Studios</h2><h3 style="color:aliceblue" class="tolefttext">Designing applications &amp; games</h3></div>
-       <div class="homescreen-header"><h3 class="gradient-text">Designing applications &amp; games.</h3></div>
-        <div class="card"><div class="incard-card"><h1 class="gradient-text"> <br>Full Circle Apps &amp; Games</h1><h2> </h2><a href="appsandgames.html"><img class="centeralign" src="Images fpr website/tab icon fpr website.png" width="100px" height="100px"></a></div></div>
+    <div class="stylebar"><a href="home-lightmode.html"><img height="96px" width="96px" src="Images fpr website/moonlight icon fpr website.png"></a><h2 class="stylebartext"> Circle Radio</h2><h3 style="color:aliceblue" class="tolefttext">Coming soon</h3></div>
+        <div class="homescreen-header"><h1></h1></div><div class="bigcard"><div class="card"><a href ="appsandgames.html"><h1 class="cardtext">GAM<br>ING</h1></a></div><div class="card1"><a href ="appsandgames.html"><h1 class="cardtext">AP<br>PS</h1></a></div><div class="card2"><a href ="about-me.html"><h1 class="cardtext">ABO<br>UT</h1></a></div></div>
+        
         
         
     </body>
